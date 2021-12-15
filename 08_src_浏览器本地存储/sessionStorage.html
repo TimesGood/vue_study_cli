@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>浏览器存储sessionStorage</title>
+    <!-- <script type="text/javascript" src=""></script> -->
+</head>
+<body>
+    <!-- 
+        可在浏览器Application中的Session Storage中查看效果
+        该数据只要浏览器一关，存储的东西就会被清空
+    -->
+
+    <button onclick="saveData()">点我保存数据</button>
+    <button onclick="readData('msg')">点我读取数据</button>
+    <button onclick="removeData('msg')">点我删除数据</button>
+    <button onclick="clearData()">点我清空数据</button>
+    <script type="text/javascript">
+
+        let p = {name:"张三",age:18}
+        //往localStorage中存值
+        function saveData(){
+            sessionStorage.setItem("msg","你好")
+            //在这里面存储的东西都会转为字符串
+            sessionStorage.setItem("msg2",222)
+            //如果要传入对象，需要将该对象转为json字符串
+            sessionStorage.setItem("person",JSON.stringify(p))
+        }
+        function readData(key){
+            console.log(sessionStorage.getItem(key))
+        }
+        function removeData(key){
+            sessionStorage.removeItem(key)
+        }
+        function clearData(){
+            sessionStorage.clear()
+        }
+    </script>
+</body>
+
+</html>

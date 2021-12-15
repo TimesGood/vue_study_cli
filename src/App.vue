@@ -1,25 +1,18 @@
 <template>
-    <div>
-        <img src="assets/logo.png">
-        <School></School>
-        <Student></Student>
+    <div class="todo-wrap">
+        <Test/>
+        <Test2/>
     </div>
 </template>
 
 <script>
-    import School from "./components/School.vue"
-    import Student from "./components/Student.vue"
-
+    import Test from "./components/Test.vue"
+    import Test2 from "./components/Test2.vue"
+    import Test3 from "./components/Test3.vue"
 
     export default {
         name:"App",
-        components:{
-            School,
-            Student
-        }
+        components:{Test,Test2,Test3},
+        
     }
 </script>
-
-<style>
-
-</style>
