@@ -1,17 +1,21 @@
 <template>
     <div>
         <button @click="isShow = !isShow">显示/隐藏</button>
-        <!-- 使用动画库中的动画 -->
+        <!-- 使用动画库中的动画，网址：https://animate.style/ -->
         <transition
-            name="animate__animated__bounce"
-            enter-active-class=""
-            appear
-            >
+            name="animate__animated animate__bounce"
+            enter-active-class="animate__swing"
+            leave-active-class="animate__backOutUp"
+            appear>
             <h1 v-show="isShow" class="come">你好啊！</h1>
         </transition>
 
         <!-- 当为多个元素配置动画时，要使用transition-group并且每个元素都要有key -->
-        <transition-group name="hello" appear>
+        <transition-group
+            name="animate__animated animate__bounce"
+            enter-active-class="animate__swing"
+            leave-active-class="animate__backOutUp"
+            appear>
             <h1 v-show="isShow" key="1" class="come">你好啊1！</h1>
             <h1 v-show="isShow" key="2" class="come">你好啊2！</h1>
             <h1 v-show="isShow" key="3" class="come">你好啊3！</h1>
